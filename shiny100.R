@@ -23,7 +23,7 @@ library(SwimmeR)
 
 
 # model
-source("C:/Users/anjw/Desktop/cst/cst_model.R")
+source("cst_model.R")
 model2 = train(target~., 
                data = x_train_scaled, 
                method = "ranger", 
