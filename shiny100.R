@@ -296,9 +296,3 @@ ui <- fluidPage(
   ))
 
 shinyApp(ui,server)
-
-library(rsconnect)
-if(!require("devtools"))
-  install.packages("devtools")
-devtools::install_github("rstudio/rsconnect")
-rsconnect::setAccountInfo(name="ggongji", token="D298D874371F732A14039D50A634872D", secret="xDBLS0lOwx9xVgVbnnK8XQuW3TbiRjmqANOEOA60")
