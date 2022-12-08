@@ -26,7 +26,7 @@ library(reshape2)
 # 연속형 컬럼 ('age','HE_sbp1','HE_dbp1','HE_glu','HE_HbA1c',
 # 'HE_insulin','HE_chol','HE_Uacid','N_WATER') 
 library(readr)
-HN20_ALL7 <- read_csv("C:/Users/anjw/Desktop/cst/HN20_ALL7.csv")
+HN20_ALL7 <- read_csv("HN20_ALL7.csv")
 
 df <- data.frame(HN20_ALL7)
 head(df,5)
