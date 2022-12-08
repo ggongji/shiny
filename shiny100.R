@@ -65,7 +65,7 @@ server <- function(input, output) {
       
       input_data$HE_BMI = as.factor(input_data$HE_BMI )
       
-      levels(input_data$HE_BMI) <- c("저체중","정상","비만 전단계","비만 1단계","비만 2단계","비만 3단계")
+      levels(input_data$HE_BMI) <- c("underweight","normal","pre-obesity","obesity level 1","obesity level 2","obesity level 3")
       head(input_data)
     }
   })
@@ -86,8 +86,8 @@ server <- function(input, output) {
                                  'HE_sbp1','HE_dbp1','HE_glu','HE_HbA1c','HE_insulin','HE_chol','HE_Uacid','N_WATER')
         
         input_data$HE_BMI = as.factor(input_data$HE_BMI )
-        
-        levels(input_data$HE_BMI) <- c("저체중","정상","비만 전단계","비만 1단계","비만 2단계","비만 3단계")
+        .
+        levels(input_data$HE_BMI) <- c("underweight","normal","pre-obesity","obesity level 1","obesity level 2","obesity level 3"/)
         
         pred_y = predict(model2,x_test_scaled) 
         result = sum(as.factor(pred_y)==y_test)/nrow(x_test_scaled)*100 #81%
@@ -269,22 +269,22 @@ ui <- fluidPage(
              tabPanel("check",fluid = TRUE, icon = icon("chart-bar"),
                       tags$h4("Please write it down in the question section below.", style="font-size:150%"),
                       div(style="display: inline-block;vertical-align:top; width: 500px;",
-                          strong("만나이"), 
+                          strong("age"), 
                           textInput("age", NULL, width = 100)),
                       div(style="display: inline-block;vertical-align:top; width: 500px;",
-                          strong("수축기 혈압"), 
+                          strong("systolic blood pressure"), 
                           textInput("sbp", NULL, width = 100)),
                       
                       div(style="display: inline-block;vertical-align:top; width: 500px;",
-                          strong("이완기 혈압"), 
+                          strong("diastolic blood pressure"), 
                           textInput("dbp", NULL, width = 100)),
                       
                       div(style="display: inline-block;vertical-align:top; width: 500px;",
-                          strong("공복혈당"),
+                          strong("fasting blood sugar"),
                           textInput("glu", NULL, width = 100)), 
                       
                       div(style="display: inline-block;vertical-align:top; width: 500px;",
-                          strong("수분섭취량"),
+                          strong("water intake"),
                           textInput("water", NULL, width = 100)),
                       br(),
                       actionButton(inputId = "label",label="update"),
